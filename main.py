@@ -32,6 +32,7 @@ while running:
     xm, ym = pygame.mouse.get_pos()
 
     n=0
+    r=40
     for i in cbuttons:
         n = n+1
         xc, yc = i
@@ -42,12 +43,6 @@ while running:
     n=0
     for i in cbuttons:
         pygame.draw.circle(screen,(40,40,40),(i),40)
-
-    if pygame.mouse.get_pressed(5)[4]:
-        print("up")
-    if pygame.mouse.get_pressed(5)[3]:
-        print("down")
-
 
 
     pygame.display.flip()
