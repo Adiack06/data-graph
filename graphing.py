@@ -22,6 +22,7 @@ ylocation = 0
 affile = open("tmax", "r")
 cbuttons =[]
 shown =0
+delta=0
 
 for i in range(numvar):
     xc = (screenx / numvar) * (i + 0.5)
@@ -35,6 +36,7 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
     screen.fill((0,0,0))
     n=0
     lastx = 0+xlocation
@@ -86,7 +88,6 @@ while running:
     n=0
     for i in cbuttons:
         pygame.draw.circle(screen,(40,40,40),(i),40)
-    print(shown)
     days=[]
     lines =0
 
@@ -102,6 +103,4 @@ while running:
             days.append(i)
             lines += 1
         affile.close()
-    print(verticlescale)
-    print(horizontalscale)
     pygame.display.flip()
